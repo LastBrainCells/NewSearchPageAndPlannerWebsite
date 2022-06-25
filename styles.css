@@ -1,8 +1,23 @@
+/* Analog Clock */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 html, body {
     height: 100%;
 }
 
+/* Also include Background */
 body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
     background-image: url('assets/MountainForest.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -11,13 +26,155 @@ body{
     background-color: #FFDED7;
 }
 
+/* Back to Analog Clock */
+.container{
+    position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #3C3E60;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #3C3E60;
+    border: 2px solid #FFDED7;
+    border-radius: 50%;
+    z-index: 100000;
+
+}
+
+.clock span{
+    position: absolute;
+    inset: 13px;
+    color: #ffffff;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+}
+
+.clock span b{ 
+    font-size: 1em;
+    opacity: 0.25;
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+.circle{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+
+}
+
+.circle i{
+    position: absolute;
+    width: 4px;
+    height: 50%;
+    background: var(--clr);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+}
+
+.circle:nth-child(1) i{
+    width: 1px;
+}
+
+.circle:nth-child(2) i{
+    width: 4px;
+}
+
+.circle2{
+    width: 160px;
+    height: 160px;
+    z-index: 9;
+}
+
+.circle3{
+    width: 120px;
+    height: 120px;
+    z-index: 8;
+
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    top: -5.7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 0 0 13px var(--clr), 0 0 40px var(--clr);
+}
+
+/* Digital Clock */
+
+#time{
+    margin-bottom: 27px;
+    display: flex;
+    padding: 7px 13px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 27px;
+}
+
+#time div{
+    position: relative;
+    width: 40px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--clr);
+}
+
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after{
+    content: ':';
+    position: absolute;
+    right: -3px;
+}
+
+#time div:last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3C3E60;
+}
+
+/* Header */
+
 h1{
     color: #3C3E60;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 75px;
     font-size: 2.5vw;
     font-family: "ROBOTO", sans-serif;
+    margin-bottom: 35px;
 }
+
+/* Firefly Animation for Background */
 
 .firefly {
     position: fixed;
