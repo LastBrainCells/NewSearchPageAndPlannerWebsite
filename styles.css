@@ -37,23 +37,24 @@ body{
 
 .clock{
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     background: #3C3E60;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 25px;
 
 }
 
 .clock::before{
     content: '';
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 2.7px;
+    height: 2.7px;
     background: #3C3E60;
-    border: 2px solid #FFDED7;
+    border: 1px solid #FFDED7;
     border-radius: 50%;
     z-index: 100000;
 
@@ -61,14 +62,14 @@ body{
 
 .clock span{
     position: absolute;
-    inset: 13px;
+    inset: 0.00001px;
     color: #ffffff;
     text-align: center;
     transform: rotate(calc(30deg * var(--i)));
 }
 
 .clock span b{ 
-    font-size: 1em;
+    font-size: 0.5em;
     opacity: 0.25;
     font-weight: 600;
     display: inline-block;
@@ -77,9 +78,9 @@ body{
 
 .circle{
     position: absolute;
-    width: 200px;
-    height: 200px;
-    border: 1px solid rgba(0,0,0,0.25);
+    width: 100px;
+    height: 100px;
+    border: 0.5px solid rgba(0,0,0,0.25);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -90,7 +91,7 @@ body{
 
 .circle i{
     position: absolute;
-    width: 4px;
+    width: 2px;
     height: 50%;
     background: var(--clr);
     opacity: 0.75;
@@ -99,22 +100,22 @@ body{
 }
 
 .circle:nth-child(1) i{
-    width: 1px;
+    width: 0.5px;
 }
 
 .circle:nth-child(2) i{
-    width: 4px;
+    width: 2px;
 }
 
 .circle2{
-    width: 160px;
-    height: 160px;
+    width: 80px;
+    height: 80px;
     z-index: 9;
 }
 
 .circle3{
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
     z-index: 8;
 
 }
@@ -122,28 +123,29 @@ body{
 .circle::before{
     content: '';
     position: absolute;
-    top: -5.7px;
-    width: 10px;
-    height: 10px;
+    top: -2.85px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: var(--clr);
-    box-shadow: 0 0 13px var(--clr), 0 0 40px var(--clr);
+    box-shadow: 0 0 6.5px var(--clr), 0 0 20px var(--clr);
 }
 
 /* Digital Clock */
 
 #time{
+    margin-top: 50px;
     margin-bottom: 27px;
     display: flex;
-    padding: 7px 13px;
-    font-size: 1em;
+    padding: 10px 20px;
+    font-size: 3em;
     font-weight: 600;
-    border-radius: 27px;
+    border-radius: 40px;
 }
 
 #time div{
     position: relative;
-    width: 40px;
+    width: 120px;
     text-align: center;
     font-weight: 500;
     color: var(--clr);
@@ -153,7 +155,7 @@ body{
 #time div:nth-child(2)::after{
     content: ':';
     position: absolute;
-    right: -3px;
+    right: -6px;
 }
 
 #time div:last-child{
@@ -163,19 +165,17 @@ body{
     color: #3C3E60;
 }
 
-/* Header */
+/* Date */
 
-h1{
-    color: #3C3E60;
-    text-align: center;
-    margin-top: 75px;
-    font-size: 2.5vw;
-    font-family: "ROBOTO", sans-serif;
-    margin-bottom: 35px;
+#date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: #7f0d90;
 }
 
 /* Firefly Animation for Background */
-
 .firefly {
     position: fixed;
     left: 50%;
