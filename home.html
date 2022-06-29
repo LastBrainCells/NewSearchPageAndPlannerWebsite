@@ -21,7 +21,34 @@
     <div class="firefly"></div>
     <div class="firefly"></div>
 
+    <!-- Nav Bar -->
+
+    <nav class="nav">
+        <div class="navContainer">
+            <div class="logo">
+                <a href="home.html">Logo</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
     <div class="container">
+
+
         <div class="clock">
 
             <!-- Analog Clock -->
@@ -59,14 +86,13 @@
 
         <!-- Google Search Bar -->
 
-      <form action="https://www.google.com/search" class="search-bar">
-            <input type="search" name="search" pattern=".*\S.*" required>
+      <form action="https://www.google.com/search" method="get" class="search-bar">
+            <input type="text" name="q" pattern=".*\S.*" required>
             <button class="search-btn" type="submit">
                 <span>Search</span>
             </button>
         </form>
 
-        
 
     </div>
 
